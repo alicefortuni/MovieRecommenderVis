@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieRecommenderVis</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/neovis.js@2.0.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/neo4j-driver"></script>
+</head>
+<body>
+    <section id="title">
+        <div id="toolbarDiv">
+           <h1> MovieRecommenderVis </h1>
+           <div class="toolbar">
+            <a class="toolbar-item" href="#homePage">Home Page</a>
+            <a class="toolbar-item" href="#interactWithVis">Interact with data</a>
+          </div>
+        </div>
+    </section>
+    <div id="contentPage">
+        <div id="loader" class="hidden"></div>
+        <section id="homePage" class="active">
+            <h1>Welcome to MovieRecommenderVis</h1>
+            <div id="home_div">
+              <img src="./res/intro-img.jpg">
+            <p>The primary goal of this project is to deliver a simple and intuitive graphical interface that enables users to interact with data on users, movies, and recommendations derived from the renowned MovieLens dataset. This interface offers predefined database query functionalities, eliminating the need to manually write Cypher queries. <br> 
+            </p>
+            <p style="font-size: 120%;">Go to the <i>'Interact with data'</i> section and start exploring!</p>
+            </div>
+            
+        </section>
+        <section id="interactWithVis" style="display: none">
+            <h3>Interact with the data through the proposed features </h3>
+            <div class="form_container">
+                <form id="interactForm">
+                    <item id="selectFunct_item">
+                        <label><b>Functionality:</b></label>
+                        <select id="functSelect" onchange="changeFunct(value)" required>
+                          <option disabled selected hidden>Select an option</option>
+                        </select>
+                        
+                      </item> 
+                      <div id="toggleItem_div">
+                        <item id="customQuery_item" class="toggleItem">
+                          <label>Cypher Query:</label>
+                          <input id="customQuery" type="text">
+                          </select>
+                        </item> 
+                      <item id="userID_item" class="toggleItem">
+                        <label>User ID:</label>
+                        <option disabled selected hidden>Select an option</option>
+                        <select id="userIdSelect">
+                        </select>
+                      </item> 
+                      <item id="movieTitle_item"  class="toggleItem">
+                        <label>Movie title:</label>
+                        <option disabled selected hidden>Select an option</option>
+                        <select id="movieTitelSelect">
+                        </select>
+                      </item> 
+                      <item id="genre_item"  class="toggleItem">
+                        <label>Genre:</label>
+                        <select id="genreSelect">
+                          <option disabled selected hidden>Select an option</option>
+                        </select>
+                      </item>                
+                    </div>
+                    <item class="submit-button">
+                      <input type="button" id="form_button" value="Confirm"/>
+                    </item>
+                </form>
+            </div>
+            <div id="contentRes_div">
+            <div id="viz"></div>
+            <div id="results"></div>
+            </div>
+        </section>
+    </div>
+    <script src="./js/config.js"></script>
+    <script src="./js/constants.js"></script>
+    <script src="./js/util.js"></script>
+    <script src="./js/init.js"></script>
+    <script src="./js/functionality.js"></script>
+    <div id="footer">
+    </div>
+
+</body>
+</html>
+
