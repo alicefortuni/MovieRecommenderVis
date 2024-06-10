@@ -9,7 +9,6 @@ function executeCustomQuery(){
     document.getElementById("form_button").addEventListener("click", async function (event) {
       event.preventDefault();
       cypherQuery = document.getElementById("customQuery").value;
-      console.log(cypherQuery)
       let res=await runCypherQuery(cypherQuery);
       if(res!=false){
         writeResults(res);

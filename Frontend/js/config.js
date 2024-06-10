@@ -1,4 +1,4 @@
-password = "bigdata";
+password = "insert-your-passsword";
 user = "neo4j";
 
 const driver = neo4j.driver(
