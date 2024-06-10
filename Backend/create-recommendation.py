@@ -117,11 +117,9 @@ model = cv_model.bestModel
 
 
 
-model = model.stages[0]
-
-print(model.rank) 
-print(model._java_obj.parent().getMaxIter()) 
-print(model._java_obj.parent().getRegParam()) 
+print(model.stages[0].rank) 
+print(model.stages[0]._java_obj.parent().getMaxIter()) 
+print(model.stages[0]._java_obj.parent().getRegParam()) 
 
 # Model prediction
 predictions = model.transform(test)
